@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Monitoreo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login">
+        <h2>Inicio de sesión</h2>
+        <input type="text" id="usuario" placeholder="Usuario">
+        <input type="password" id="contrasena" placeholder="Contraseña">
+        <button onclick="iniciarSesion()">Entrar</button>
+        <p id="mensajeError"></p>
+    </div>
+
+    <div id="interfaz" style="display: none;">
+        <h1>Sistema de Monitoreo</h1>
+        <h2>Área de monitoreo</h2>
+
+        <h3>Humedad</h3>
+        <input type="range" id="humedad" min="0" max="20" value="0" oninput="actualizarSensores()">
+        <p>Valor de humedad: <span id="valorHumedad">0</span>%</p>
+        <div id="ledHumedad" class="led"></div>
+
+        <h3>Temperatura</h3>
+        <input type="range" id="temperatura" min="0" max="50" value="0" oninput="actualizarSensores()">
+        <p>Valor de temperatura: <span id="valorTemperatura">0</span> °C</p>
+        <div id="ledTemperatura" class="led"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
